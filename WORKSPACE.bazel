@@ -14,13 +14,5 @@ container_repositories()
 load("@io_bazel_rules_docker//repositories:deps.bzl", container_deps = "deps")
 container_deps()
 
-load("@io_bazel_rules_docker//container:container.bzl", "container_pull")
-container_pull(
-    name = "python3_base",
-    registry = "gcr.io",
-    repository = "distroless/python3",
-    digest = "sha256:4ec279ac01c2c13952a65bf5de0d42998b1d171afebe7e6557352acfc6f90e37",
-)
-
 load("@io_bazel_rules_docker//python3:image.bzl", py3_image_repositories = "repositories")
 py3_image_repositories()
